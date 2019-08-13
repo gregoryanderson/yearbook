@@ -1,0 +1,9 @@
+.photo__img {
+    max-height: 200px;
+    margin-top: 20px;
+}
+
+.photo__section {
+    width: 80%;
+    overflow: hidden;
+}
