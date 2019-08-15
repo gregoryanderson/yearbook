@@ -3,10 +3,16 @@
     box-sizing: border-box;
 }
 
-.staff__section {
+.staff__h1,
+.student__h1 {
+  color: rebeccapurple
+}
+
+.staff__section, 
+.student__section {
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  height: 100vh;
+  grid-gap: 10px;
+  justify-items: center;
 }
