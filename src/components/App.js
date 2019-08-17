@@ -14,9 +14,21 @@ class App extends Component {
   }
 
   addNewPerson = newPerson => {
-    let addedPerson = {...newPerson, id: Date.now() };
-    this.setState({ [newPerson.role]: [...this.state[newPerson.role], addedPerson] });
-  }
+    let addedPerson = { ...newPerson, id: Date.now() };
+    this.setState({
+      [newPerson.role]: [...this.state[newPerson.role], addedPerson]
+    });
+  };
+
+  removePerson = person => {
+    const filteredStudents = this.state.students.filter(
+      human => human.id !== person.id
+    );
+    const filteredStaff = this.state.staff.filter(
+      human => human.id !== person.id
+    )
+    this.setState({ students: filteredStudents, staff: filteredStaff });
+  };
 
   render = () => {
     return (
@@ -24,11 +36,22 @@ class App extends Component {
         <header className="App-header">
           <h1>Turing Yearbook</h1>
         </header>
-        <Form addNewPerson={this.addNewPerson}/>
-        <Cohort staff={this.state.staff} students={this.state.students} />
+        <Form addNewPerson={this.addNewPerson} />
+        <h1 className="student__h1">Students</h1>
+        <Cohort
+          people={this.state.staff}
+          removePerson={this.removePerson}
+          type={"staff"}
+        />
+        <h1 className="student__h1">Students</h1>
+        <Cohort
+          people={this.state.students}
+          removePerson={this.removePerson}
+          type={"students"}
+        />
       </div>
     );
-  }
+  };
 }
 
 export default App;
