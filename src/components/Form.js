@@ -45,7 +45,7 @@ class Form extends Component {
     const { name, quote, superlative } = this.state;
     return (
       <section className="form__section">
-        <p>Add a person!</p>
+        <p className="form__p">Add a person!</p>
         <form className="form__form">
           <input
             type="text"

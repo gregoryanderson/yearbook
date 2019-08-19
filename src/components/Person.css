@@ -1,7 +1,7 @@
 .person__section {
-    background-color: azure;
+    background-color: #C4E8F0;
     width: 200px;
-    height: 250px;
+    height: 300px;
     display:flex;
     flex-direction: column;
     align-items:center;
@@ -19,10 +19,18 @@
     overflow: hidden;
 }
 
-.name__section {
-    color: #FF6347
+.name__p {
+    color: #FF6347;
 }
 
-.superlative__section {
-    color: #6395EC
+.superlative__p {
+    color: #6395EC;
+    font-size: 12px;
+    margin: 5px;
+}
+
+.quote__p {
+    font-style: italic;
+    font-size: 12px;
+    margin: 5px;
 }
